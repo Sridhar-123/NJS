@@ -1,0 +1,97 @@
+
+
+
+Certainly! Let's correct and organize the information for better recall, and I'll add some mnemonics for remembering:
+
+1. **Execution Context Overview:**
+   - In JavaScript, everything happens inside an Execution Context (EC) or Global Execution Context (GEC).
+   - GEC is divided into:
+     1. **Memory Context || Variable Environment:** Where variables are stored.
+     2. **Code Component || Thread of Execution:** Where code is executed.
+
+2. **Synchronous Single-threaded Nature:**
+   - JavaScript is a synchronous, single-threaded language, executing one command at a time in a specific order.
+
+3. **Execution of JS Code:**
+   - When you run a JS code, Execution Context is created in two phases:
+      1. **Memory Creation / Creation Phase:** Variables are hoisted with "undefined" values.
+      2. **Code Execution Phase:** Actual code is executed, and variables get their respective values.
+
+4. **Function Invocation:**
+   - When a function is invoked (e.g., `fun()`), a new Execution Context is created inside the global context.
+
+   **Mnemonic:** "Function Invoked Creates EC (FICE)"
+
+5. **Return Statement:**
+   - The `return` keyword returns control to the point where the function was invoked.
+
+   **Mnemonic:** "Return brings control back."
+
+6. **Deletion of Execution Contexts:**
+   - After the function execution, the specific Execution Context is deleted.
+
+   **Mnemonic:** "Done with function, Delete its EC."
+
+7. **Call Stack in JS:**
+   - JavaScript has its own Call Stack.
+   - The call stack maintains the order of execution of Execution Contexts.
+
+   **Mnemonic:** "Call Stack Orders Executions" (CSOE)
+
+8. **Global Execution Context in Stack:**
+   - The Global Execution Context is at the bottom of the stack.
+   - When a JS program runs, the GEC is pushed onto the call stack.
+
+   **Mnemonic:** "GEC: Bottom and Pushed."
+
+9. **Final Cleanup:**
+   - After the entire program is executed, the GEC is completely deleted from the call stack.
+
+   **Mnemonic:** "JS Work Done, Global EC Gone."
+
+10. **Recall Order Mnemonic:**
+   - "FICE, Return, Delete, CSOE, GEC, Done."
+
+   **Mnemonic:** "Friends Really Deserve Cool Gifts Daily."
+
+Feel free to adapt the mnemonics to your liking! They are just aids for better recall and understanding.
+
+
+
+
+1st Lecture 
+"Everything in JavaScript happens inside an Execution Context or Global Execution Context (GEC)"
+in GEC they are differentiated in two columns 
+1.Memory Context || Variable Environment  2.Code Component || Thread of Execution
+"JavaScript is a Synchronous Single threaded language (one command at a time in a specific order)"
+
+What happens when you run a JS Code ?
+Execution Context Created in two phase 
+1. Memory Creation / Creation phase
+2. Code Execution phase
+
+At first Js reserves Memory for "N" Variable at 1st phase with allocation of special value "undefined".
+At second phase it will be allocated with its respected value.
+fun() => function invocation -> it means function is executed 
+** When Ever a function invoked or mini program then altogether brand new execution context is created inside global context"
+// and this function with its scoped Variable values its variables and functions inside this function..
+after the function is executed the control will pass to the execution context back
+
+
+// THIS "return" keyword states that :-
+        now return the control of the program to the place where this function was invoked 
+        As soon as we encounter the return statement we have return value
+  
+  after the scenario done
+
+  After the whole  function is executed ,then this whole execution context  for that instance of that function will be deleted .
+  "JS is done with his work so code executed so the whole global executed context will be completely Deleted
+
+
+  La Topic :-
+   js has its own Call stack 
+   in the botton of the stack we have our global execution context
+    That means ,whenever any JS program is sun ,this call stack is populated with this GEC .whole GEC is pushed inside this stack
+
+    "CallStack maintain the order of execution of execution context"
+
