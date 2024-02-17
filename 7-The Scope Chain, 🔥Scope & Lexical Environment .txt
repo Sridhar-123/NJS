@@ -1,0 +1,150 @@
+local memory space 
+function a() {
+    //b is not the local variable of this function
+    console.log(b); // will it print undefined or not defined ?
+}
+var b=10;
+a();
+
+
+// 2
+function a() {
+  c();
+    function c(){
+    console.log(b); // will it print undefined or not defined ?
+}}
+var b=10;
+a();
+// then also output 10 👁️👁️
+if its vice-versa?
+function a() {
+  c();
+  var b=10;
+
+    function c(){
+    console.log(b); // will it print undefined or not defined ?
+}}
+a();
+// then also answer wont change its same..
+
+But Error Comes here 😡😡😡😡😡😡😡 
+if 
+function a() {
+  c();
+  var b=10;
+
+    function c(){
+    
+}}
+a();
+console.log(b); //  it print  not defined 
+// 3 executed context is set up 
+
+// scaope where u can access specific variable or function in a code that is scope
+1.what is the scope of variable b
+2.is b inside a scope of the function
+scope is directly dependent in lexical environment
+
+**where ever an execution context is created then a lexical envirnoment envirnoment**
+// lexical envirnoment is the local memory and along with lexical environment with its parent
+// **lexical means heiracy or in order **
+c func is lexically inside a() function
+// a() is lexically in the global scope
+where that code is present physically inside the code 
+c() is present inside the a() physically.
+lexical environment are pointing to
+c()--> a() --> GEC --> NULL
+there is reference point which do the work  just see if it is available locally if not it goes to its lexicall parent and searchers there if there ok or else it goes to its lexical parent and searchers there
+this is y we can access the value of b outside the function
+This Way searching is defined as *** SCOPE CHAIN... ***
+lexical envirnoment = local memory+lexical environment of parent
+Anonymous = Global Execution Context..
+
+
+Certainly! Let's construct the key points in a more organized and constructive way:
+
+### Lecture Notes:
+
+#### **1. Variable Access in Different Scenarios:**
+```javascript
+// Scenario 1
+function a() {
+    console.log(b); // Will it print undefined or not defined?
+}
+var b = 10;
+a();
+// Output: 10
+```
+- The variable `b` is declared globally and accessible inside the function `a()`.
+
+```javascript
+// Scenario 2
+function a() {
+    c();
+    function c() {
+        console.log(b); // Will it print undefined or not defined?
+    }
+}
+var b = 10;
+a();
+// Output: 10
+```
+- The function `c()` is lexically inside `a()`, allowing access to the variable `b` from its lexical environment.
+
+```javascript
+// Scenario 3 (Vice-Versa)
+function a() {
+    c();
+    var b = 10;
+    function c() {
+        console.log(b); // Will it print undefined or not defined?
+    }
+}
+a();
+// Output: 10
+```
+- JavaScript hoists the variable declaration, allowing access to `b` inside `c()`.
+
+```javascript
+// Scenario 4 (Error)
+function a() {
+    c();
+    var b = 10;
+    function c() {}
+}
+a();
+console.log(b); // Results in "not defined"
+// Error: Variable `b` is local to function `a()` and not accessible outside.
+```
+
+#### **2. Understanding Scope and Lexical Environment:**
+- Scope is where you can access specific variables or functions in code.
+
+1. **Scope of Variable `b`:**
+   - Global Scope in Scenarios 1, 2, and 3.
+   - Local to function `a()` in Scenario 4.
+
+2. **Is `b` Inside the Scope of the Function:**
+   - Yes, in all scenarios.
+
+#### **3. Lexical Environment and Scope Chain:**
+- Lexical Environment: Local memory + Lexical environment of its parent.
+- Lexical Order: Hierarchy or order of appearance in the code.
+
+- In the code:
+  - Function `c()` is lexically inside `a()`.
+  - `a()` is lexically in the global scope.
+  - Scope Chain: `c()` -> `a()` -> Global -> NULL.
+
+- The scope chain follows a reference point to find variables:
+  - Locally first, then moves up the lexical parent.
+  - Accessible values form the **Scope Chain**.
+
+- **Example:** Accessing `b` outside `c()` works because of the Scope Chain.
+  
+#### **4. Final Note:**
+- Wherever an execution context is created, a lexical environment is established.
+- The Lexical Environment is the local memory along with the lexical environment of its parent.
+- This searching mechanism is known as the **Scope Chain**.
+
+By understanding these concepts, you can navigate variable access and scope in JavaScript effectively.
