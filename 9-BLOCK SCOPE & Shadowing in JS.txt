@@ -1,0 +1,47 @@
+What is Block in JS?
+{ }// Block combining multiple js statements
+{
+    // Compound statements
+    var a=10;
+    console.log(a);
+}
+We group multiple statements in a Block ,where we can use it when javascript expects one statement
+
+{
+   const a=10;
+   let b=2;
+   var b=3;
+   // const and let are Block scoped because they are made in the another memory
+   but var is in global executive memory so it is globally scoped
+}
+
+what is shadowing in JS?
+var a=100;
+{
+    var a=10; this a shadowed the upper a value (100) so it removes 100 and keep in the memory location of a as 10 
+    console.log(a);//10
+}
+console.log(a);//10
+
+let b=100;
+{
+    var a=1;
+    let b=10;
+    const c=10;
+    console.log(b); // 10
+}
+console.log(b); // 100
+here in script b=100
+here in Block b=10 this b shadowed 100 and gave 10
+global in a=1; 
+
+we cannot use let over var
+let a=9;
+{
+    var a=9; // this is termed as illegal shadowing
+}
+but its vicce versa js accepts it
+var a=9;
+{
+    let a=9;// no error
+}

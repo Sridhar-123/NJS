@@ -1,0 +1,16 @@
+1Q.What is Temporal Dead Zone?
+2Q.Are let and const declaration hoisted?
+3Q.SyntaxError vs.
+Reference Error vs
+TypeError?
+
+Temporal Dead Zone
+
+
+
+Reference Error Explained
+
+
+
+strictness
+const>>let>var

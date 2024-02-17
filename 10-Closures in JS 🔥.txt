@@ -1,0 +1,4 @@
+Closure means a function bind together with its lexical envirnonement
+Closure along with lexical scope together bundled is know as Closure
+
+Function along with its lexical scope forms a Closure
